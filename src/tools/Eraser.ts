@@ -1,6 +1,6 @@
 import Tool from "./Tool";
 
-export default class Brush extends Tool {
+export default class Eraser extends Tool {
     MouseDown: boolean
 
 
@@ -8,6 +8,9 @@ export default class Brush extends Tool {
         super(canvas)
         this.listen()
         this.MouseDown = false
+        if (this.ctx){
+            this.ctx.strokeStyle = '#ffffff'
+        }
     }
 
     listen() {
