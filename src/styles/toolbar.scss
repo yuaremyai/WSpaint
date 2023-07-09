@@ -57,4 +57,8 @@
     .redo{
         @include btn-image('../assets/redo.png');
     }
+    
+    .save {
+        @include btn-image('../assets/save.png');
+    }
 }
