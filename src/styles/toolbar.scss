@@ -1,0 +1,60 @@
+@import './variables.scss';
+
+@mixin btn-image($image-url) {
+    background: url($image-url) center center no-repeat;
+    background-size: 25px;
+}
+  
+.toolbar {
+    background-color: $bar-bg;
+    width: 100%;
+    height: 40px;
+    box-shadow: 0px 3px 4px black;
+    z-index: 10;
+    padding: 0px 10px;
+    display: flex;
+    align-items: center;
+
+    &__btn {
+        height: 30px;
+        width: 30px;
+        border: none;
+        cursor: pointer;
+    }
+
+    &__input {
+        background-color: inherit;
+        border: none;
+        width: 30px;
+        height: 30px;
+    }
+
+    .brush {
+        @include btn-image('../assets/brush.png');
+    }
+
+    .rect{
+        @include btn-image('../assets/rect.png');
+    }
+
+    .circle{
+        @include btn-image('../assets/circle.png');
+    }
+
+    .eraser{
+        @include btn-image('../assets/eraser.png');
+    }
+
+    .line{
+        @include btn-image('../assets/line.png');
+    }
+
+    .undo{
+        @include btn-image('../assets/undo.png');
+        margin-left: auto;
+    }
+
+    .redo{
+        @include btn-image('../assets/redo.png');
+    }
+}

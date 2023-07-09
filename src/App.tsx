@@ -1,20 +1,18 @@
-import { useEffect, useRef, useState } from "react";
-import "./App.css";
+import { useState } from "react";
+import "./styles/app.scss";
+import Canvas from "./components/Canvas";
+import Toolbar from "./components/Toolbar";
+import Settingbar from "./components/Settingbar";
 
 
 
 function App() {
-  const canvasRef = useRef<HTMLCanvasElement>(null)
-  
-  useEffect( () => {
-    if (canvasRef.current) {
-      canvasRef.current.getContext("2d")
-    }
-  }, [])
 
   return (
     <div className="App">
-      <canvas ref={canvasRef} className="canvas" width={'600px'} height={'400px'}></canvas>
+      <Toolbar />
+      <Settingbar />
+      <Canvas />  
     </div>
   );
 }
