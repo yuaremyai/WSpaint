@@ -17,10 +17,14 @@ function Canvas() {
     }
   }, [])
   
+  function MouseDownHandler() {
+    canvasState.pushToUndo(canvasRef.current!.toDataURL())
+    canvasState.clearRedo()
+  }
 
   return (
     <div className='canvas'>
-      <canvas ref={canvasRef} width={'600px'} height={'400px'}></canvas>
+      <canvas onMouseDown={MouseDownHandler} ref={canvasRef} width={'600px'} height={'400px'}></canvas>
     </div>
   )
 }

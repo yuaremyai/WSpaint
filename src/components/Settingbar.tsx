@@ -4,7 +4,6 @@ import '../styles/settingbar.scss'
 
 function Settingbar() {
 
-
   function handleWidthInput(e: ChangeEvent<HTMLInputElement>) {
     if (Number(e.target.value) > 50) {
       toolState.setStrokeWidth(50)
