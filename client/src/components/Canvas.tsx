@@ -16,6 +16,17 @@ function Canvas() {
       toolState.setTool(new Brush(canvasRef.current))
     }
   }, [])
+
+  useEffect( () => {
+    const socket = new WebSocket('ws://localhost:5000/')
+    socket.onopen = function() {
+      socket.send(JSON.stringify({id:5555}))
+    }
+
+    socket.onmessage = function(msg) {
+      console.log(msg.data)
+    }
+  }, [])
   
   function MouseDownHandler() {
     canvasState.pushToUndo(canvasRef.current!.toDataURL())
