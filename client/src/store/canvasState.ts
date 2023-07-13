@@ -5,6 +5,7 @@ class CanvasState {
     redoList: string[] = []
     undoList: string[] = []
 
+
     constructor() {
         makeAutoObservable(this)
     }

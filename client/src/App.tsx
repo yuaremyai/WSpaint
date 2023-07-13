@@ -6,9 +6,7 @@ import Settingbar from "./components/Settingbar";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 
-
 function App() {
-
   return (
       <BrowserRouter>
         <div className="App">

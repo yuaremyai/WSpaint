@@ -1,10 +1,14 @@
 export default class Tool {
     canvas: HTMLCanvasElement
-    ctx: CanvasRenderingContext2D | null
+    socket: WebSocket
+    sessionID: string
+    ctx!: CanvasRenderingContext2D
 
-    constructor (canvas: HTMLCanvasElement) {
+    constructor (canvas: HTMLCanvasElement, socket:WebSocket, sessionID: string) {
         this.canvas = canvas
-        this.ctx = canvas.getContext('2d')
+        this.socket = socket
+        this.sessionID = sessionID
+        this.ctx = canvas.getContext('2d')!
         this.deleteEvents()
     }
 
@@ -30,7 +34,5 @@ export default class Tool {
         this.canvas.onmousedown = null
         this.canvas.onmouseup = null
         this.canvas.onmousemove = null
-        this.canvas.onmouseout = null
-
     }
 }

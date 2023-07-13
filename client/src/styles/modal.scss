@@ -1,0 +1,48 @@
+@import 'variables.scss';
+
+
+.modal{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(#000000, 0.6);
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+
+    &__window {
+        background-color: white;
+        width: 500px;
+        border-radius: 5px;
+        padding: 10px 15px;
+        display: flex;
+        gap: 15px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__text {
+        font-size: 1.5rem;
+    }
+
+    &__input {
+        font-size: 1.25rem;
+        width: 50%;
+        padding: 5px 10px;
+
+    }
+
+    &__btn {
+        width: fit-content;
+        padding: 10px;
+        width: 25%;
+        color: $font-color;
+        background-color: $background-color;
+        border-radius: 5px;
+        margin: auto;
+    }
+}
+
